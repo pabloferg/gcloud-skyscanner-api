@@ -13,3 +13,5 @@ import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/users/<username>/<path>/credentials.json"
   
 You will have to create a service account following https://cloud.google.com/docs/authentication/production , and you will download a json file that contains your key.
+
+![Screenshot](/assets/images/ss-flow.png)
