@@ -22,7 +22,16 @@
  ```
     
     
-    
+
+Costs
+This tutorial uses billable components of Cloud Platform, including:
+
+Google Cloud Functions
+Google Cloud Pub/Sub
+Google Cloud Scheduler
+
+
+
 Pub/Sub CLient Libraries: https://cloud.google.com/pubsub/docs/reference/libraries
 
 
