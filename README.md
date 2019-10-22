@@ -1,5 +1,8 @@
 # gcloud-skyscanner-api
 
+This projects uses Google Cloud Functions and Pub/Sub Topics with Skyscanne API to get fares for different destination. 
+
+
 
 
 ```
@@ -62,7 +65,7 @@ You will need your `KEY` to access the API. **You will set this key as environme
 
 ## Initial Setup
 
-1. Create a Google Cloud Project.
+1. Create a [Google Cloud Project](https://cloud.google.com/).
 2. You will need 3 Cloud Functions and 3 Pub/Sub Topics.
 3. You will need to setup an environment variable with your API key.
 4. You will need to create 2 Tables in BigQuery:
