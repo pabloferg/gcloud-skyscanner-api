@@ -1,10 +1,12 @@
 # gcloud-skyscanner-api
 
+
+
 ```
 ├── assets
 │   ├── airport_codes_200.csv
 │   └── images
-│       └── ss-flow.png
+│       └── bigpicture.png
 ├── README.md
 └── src
     └── CF-Skyscanner-ProcessRow
@@ -16,6 +18,10 @@
         └── helpers.py
         └── requirements.txt
     └── CF-Skyscanner-ProcessRow
+        └── main.py
+        └── helpers.py
+        └── requirements.txt
+    └── setup
         └── main.py
         └── helpers.py
         └── requirements.txt
@@ -46,4 +52,8 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/users/<username>/<path>/credentia
   
 You will have to create a service account following https://cloud.google.com/docs/authentication/production , and you will download a json file that contains your key.
 
-![Screenshot](/assets/images/ss-flow.png)
+![Screenshot](gcloud-skyscanner/assets/images/signup.png)
+
+
+![Screenshot](gcloud-skyscanner/assets/images/bigpicture.png)
+
