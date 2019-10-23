@@ -60,7 +60,7 @@ When you use Google products within Google environment, you don't have to worry 
 In your local python environment, run the following code to set the environment variable:
 ```
 import os 
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/<path>/<credentials>.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/<path>/<key>.json"
 ```
 
 ### Request access to Skyscanner API on RapidAPI.com
