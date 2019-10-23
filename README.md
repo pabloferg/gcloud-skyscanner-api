@@ -77,6 +77,8 @@ You will need your `KEY` to access the API. **You will set this key as environme
 1. Create a [Google Cloud Project](https://cloud.google.com/).
 2. You will need 3 Cloud Functions and 3 Pub/Sub Topics.
 
+![Screenshot](gcloud-skyscanner/assets/images/functions.png)
+
 You can read [this](https://cloud.google.com/scheduler/docs/tut-pub-sub) tutorial to have an idea about how this works. 
 
 There are 3 folders in this repository containing 3 Cloud Functions (CF):
