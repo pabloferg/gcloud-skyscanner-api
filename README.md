@@ -55,7 +55,7 @@ Tip: If you are playing locally with Python and `gcloud`, you may face the follo
 ```
 google.auth.exceptions.DefaultCredentialsError: Could not automatically determine credentials. Please set GOOGLE_APPLICATION_CREDENTIALS or explicitly create credentials and re-run the application. For more information, please see https://cloud.google.com/docs/authentication/getting-started
 ```
-When you use Google products within Google environment, you don't hace to worry about credentials becaus eevrething works smoothly - you don't have to setup credential ni your Cloud Functions for example. However, when using gcloud locally you will have to create a service account following [this](https://cloud.google.com/docs/authentication/production) procedure , then **you will download a json file that contains your key**.
+When you use Google products within Google environment, you don't have to worry about credentials because everything works smoothly - you don't have to set up credentials in your Cloud Functions for example. However, when using `gcloud` locally you will have to create a _service account_ following [this](https://cloud.google.com/docs/authentication/production) procedure , then **you will download a json file that contains your key**.
 
 In your local python environment, run the following code to set the environment variable:
 ```
