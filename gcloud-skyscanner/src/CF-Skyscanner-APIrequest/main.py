@@ -28,8 +28,8 @@ def main(event, context):
     list_of_dicts_OutInb = process_json_response(json_response=json_response,pubsub_attributes=pubsub_attributes)
 
     for dict_to_insert in list_of_dicts_OutInb:
-        insert_to_bigquery(dataset='SkyscannerAirportCodes',
-                           table='results_test',
+        insert_to_bigquery(dataset='skyscanner',
+                           table='results',
                            dict_to_insert=dict_to_insert)
 
     print("**** Rows inserted ****")
