@@ -100,7 +100,7 @@ There are 3 folders in this repository containing 3 Cloud Functions (CF):
         
 You will deploy this functions using the [Google Cloud SDK](https://cloud.google.com/appengine/docs/standard/go/download). You need to install it first to be able to uset `gcloud` command in your terminal. Once installed, try to get familiarised with it before moving forward.
  
-Download the folders. In your Terminal, move to the folder path with `cd <path>`. Once in the folder, run the following command to deploy the function
+Download the folders. In your Terminal, move to the folder path with `cd <path>`. Once in the folder, run the following command to deploy the function:
 
 ```
 $ gcloud functions deploy FUNCTION_NAME --runtime python37 --trigger-topic TOPIC_NAME
@@ -118,6 +118,7 @@ $ gcloud functions deploy Skyscanner-APIrequest --runtime python37 --trigger-top
 ```
 gcloud functions deploy Skyscanner-LoopTable --set-env-vars SKYSCANNER_KEY=<YOUR KEY FROM RAPID-API>
 ```
+You will [retrieve the key ](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/src/CF-Skyscanner-APIrequest/helpers.py#L6) in the script.
 
 4. You will need to create [2 Tables](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/src/setup/createPubsubTopic.py#L13) in BigQuery:
             a) to store the list of destination codes to search on skyscanner,
