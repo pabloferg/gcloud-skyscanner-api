@@ -39,7 +39,7 @@ Instead of reading each `code`-`haul` and calling the API serially - we would fo
         └── main.py
         └── helpers.py
         └── requirements.txt
-    └── CF-Skyscanner-APIcall
+    └── CF-Skyscanner-APIrequest
         └── main.py
         └── helpers.py
         └── requirements.txt
@@ -94,7 +94,7 @@ There are 3 folders in this repository containing 3 Cloud Functions (CF):
         └── main.py
         └── helpers.py
         └── requirements.txt
-    └── CF-Skyscanner-APIcall
+    └── CF-Skyscanner-APIrequest
         └── main.py
         └── helpers.py
         └── requirements.txt
