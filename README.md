@@ -6,7 +6,7 @@ In a nutshell, this is how it works:
 - Get a `destination code` and `haul` (_Short Haul, Long Haul_) stored in a [table](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/assets/destinationCodes.csv) in [Big Query](https://cloud.google.com/bigquery/).
 - Create multiple searches for each destination for different Cabins (_economy, business_), Point of Sale (_UK or US website_) and Departure dates.
 - For every combination of these dimensions, you will query the Skyscanner API to get a json file with the list of itineraries containing all the information you would see in the browser version.
-- Once you get the json file, you process it (cleaning, decode values,...) and insert [it](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/assets/results_sample.csv) into BigQuery for further analysis. 
+- Once you get the json file, you process it (cleaning, decode values,...) and insert it into BigQuery for further analysis. 
 
 ![Screenshot](gcloud-skyscanner/assets/images/webvsapi.png)
 
@@ -124,7 +124,7 @@ You will [retrieve the key ](https://github.com/pabloferg/gcloud-skyscanner-api/
 
 4. You will need to create [2 Tables](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/src/setup/createPubsubTopic.py#L13) in BigQuery:
             a) to store the list of destination codes to search on skyscanner,
-            b) to save results from the API response
+            b) to save results from the API response. Use the [sample table](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/assets/results_sample.csv) to get the schema used in this project. _A better way of doing this would be to create dinamicaly the schema depending on the input data structure- but I'll do this in further improvements sorry!_
            
 ### Scheduler
 
