@@ -21,5 +21,5 @@ def main(event, context):
         attributes = {'code': row.code, 'haul': row.haul}
         # Publish attributes
         publish_pubsub(
-            project_id="flights-243314", topic_name="row-read", **attributes)
+            project_id=<your project ID>, topic_name="row-read", **attributes) ## TODO: <project_id
     print("********** FINISHED")
