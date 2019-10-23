@@ -1,12 +1,20 @@
 # gcloud-skyscanner-api
 
-This projects uses Google **Cloud Functions** and **Pub/Sub Topics** with **Skyscanne API** to get fares for different destination. 
+This projects uses Google [Cloud Functions](https://cloud.google.com/functions/) and [Pub/Sub Topics](https://cloud.google.com/pubsub/docs/) with [Skyscanne API](https://rapidapi.com/skyscanner/api/skyscanner-flight-search) to get fares for different destination. With these tools and a bit of imagination, you will track fares for your favourite destinations, compare different airlines prices and get the best deal for your holidays 🌴🌞
 
-In a nutshell, you will get a list of destination codes stored in Big Query. Then you will create multiple searches for each destination for different Cabins (economy, business), Point of Sale (UK, US) and Dates. For every combination of these dimensions, you will query the Skyscanner API to get a json file with the list of itineraries containing all the information you would see in the browser version. Once you get the json file, you process it (cleaning, decode values,...) and insert it in BigQuery for further analysis. 
+In a nutshell, this is how it works: 
+- Get a destination code stored in Big Query.
+- Create multiple searches for each destination for different Cabins (economy, business), Point of Sale (UK or US website) and Departure dates.
+- For every combination of these dimensions, you will query the Skyscanner API to get a json file with the list of itineraries containing all the information you would see in the browser version.
+- Once you get the json file, you process it (cleaning, decode values,...) and insert it in BigQuery for further analysis. 
 
 ![Screenshot](gcloud-skyscanner/assets/images/webvsapi.png)
 
 Before you continue, be aware that th Google CLoud Platform components used in this project are **billable**, so you could have some costs. If you are a new user you should get some welcome credits, so don't worry at the beginning. 
+
+### Architecture
+
+![Screenshot](gcloud-skyscanner/assets/images/flow2.png)
 
 ## Repository structure
 
@@ -37,10 +45,6 @@ Before you continue, be aware that th Google CLoud Platform components used in t
         └── destinationCodes.csv
  ```
     
-### Architecture
-
-![Screenshot](gcloud-skyscanner/assets/images/flow2.png)
-
 
 ### Languages and libraries 
 
