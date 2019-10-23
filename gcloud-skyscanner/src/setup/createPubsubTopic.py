@@ -1,10 +1,4 @@
 # TODO(developer) : project_id = YOUR GCLOUD PROJECTID
-# project_id="flights-243314"
-# TODO(developer) : topic = NAME FOR THE NEW TOPIC
-# topic="skyscanner-start"
-
-project_id="flights-243314"
-topic="skyscanner-start"
 
 # AUTHENTICATION
 set_credentials(filename)
@@ -15,23 +9,12 @@ dataset_id = "skyscanner"
 create_dataset(dataset_name = dataset_id)
 # Load csv to dataset
 table_id = "main"
-filename = '/users/pablofernandez/PycharmProjects/setup/destinationCodes.csv'
+# TODO(developer) : filename = '/<path?/destinationCodes.csv'
 load_csv(dataset_id=dataset_id,table_id,filename)
 
 # Create Pub/Sub topics
 for topic in ["skyscanner-start", "row-read", "search-created"]:
     create_topic(project_id, topic)
-
-
-# Deploy Cloud Functions
-# https://cloud.google.com/scheduler/docs/tut-pub-sub
-# gcloud functions deploy FUNCTION_NAME --runtime python37 --trigger-topic TOPIC_NAME
-
-# TODO : $ gcloud functions deploy Skyscanner-LoopTable --runtime python37 --trigger-topic skyscanner-start
-# TODO : $ gcloud functions deploy Skyscanner-ProcessRow --runtime python37 --trigger-topic row-read
-# TODO : $ gcloud functions deploy Skyscanner-APIrequest --runtime python37 --trigger-topic search-created
-# Set Skyscanner API key as environment variable
-# TODO : ¢ gcloud functions deploy Skyscanner-LoopTable --set-env-vars SKYSCANNER_KEY=<YOUR KEY FROM RAPID-API>
 
 
 # Load csv with destination codes
