@@ -75,7 +75,7 @@ You will need your `KEY` to access the API. **You will set this key as environme
 ## Initial Setup
 
 1. Create a [Google Cloud Project](https://cloud.google.com/).
-2. You will need 3 Cloud Functions and 3 Pub/Sub Topics.
+2. You will need 3 Cloud Functions and [3 Pub/Sub Topics](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/src/setup/setup.py#L15).
 
 ![Screenshot](gcloud-skyscanner/assets/images/functions.png)
 
