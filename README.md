@@ -65,7 +65,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/<path>/<key>.json"
 
 ### Request access to Skyscanner API on RapidAPI.com
 
-[RapidAPI](https://rapidapi.com/) platform is an easy way to start using Skyscanner API. First, you just need to sign up and find the API [here](https://rapidapi.com/skyscanner/api/skyscanner-flight-search). You can play with the UI on your browser to see how the REST API works, but we will use Python instead. 
+[RapidAPI](https://rapidapi.com/) platform is an easy way to start using Skyscanner API. First, you just need to sign up and find the API [here](https://rapidapi.com/skyscanner/api/skyscanner-flight-search). You can play with the UI on your browser to see how the REST API works, but we will use Python instead because it's more fun. 
 
 You will need your `KEY` to access the API. **You will set this key as environment variable in the Cloud Function calling the API** (Explained lateron)
 
