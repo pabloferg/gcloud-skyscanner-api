@@ -10,7 +10,8 @@ In a nutshell, this is how it works:
 
 ![Screenshot](gcloud-skyscanner/assets/images/webvsapi.png)
 
-Before you continue, be aware that th Google CLoud Platform components used in this project are **billable**, so you could have some costs. If you are a new user you should get some welcome credits, so don't worry at the beginning. 
+
+Before you continue, be aware that the Google Cloud components used in this project are **billable**, so you could have some costs. If you are a new user you should get some welcome credits, so don't worry at the beginning. 
 
 ### Architecture
 
