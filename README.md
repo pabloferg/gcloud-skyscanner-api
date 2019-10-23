@@ -71,6 +71,7 @@ You will need your `KEY` to access the API. **You will set this key as environme
 You can read [this](https://cloud.google.com/scheduler/docs/tut-pub-sub) tutorial to have an idea about how this works. 
 
 There are 3 folders in this repository containing 3 Cloud Functions (CF):
+```
 └── src
     └── CF-Skyscanner-ProcessRow
         └── main.py
@@ -84,8 +85,9 @@ There are 3 folders in this repository containing 3 Cloud Functions (CF):
         └── main.py
         └── helpers.py
         └── requirements.txt
+```
         
- You will deploy this functions using the [Google Cloud SDK](https://cloud.google.com/appengine/docs/standard/go/download). You need to install it first to be able to uset `gcloud` command in your terminal. Once installed, try to get familiarised with it before moving forward.
+You will deploy this functions using the [Google Cloud SDK](https://cloud.google.com/appengine/docs/standard/go/download). You need to install it first to be able to uset `gcloud` command in your terminal. Once installed, try to get familiarised with it before moving forward.
  
 Download the folders. In your Terminal, move to the folder path with `cd <path>`. Once in the folder, run the following command to deploy the function
 
@@ -101,18 +103,17 @@ $ gcloud functions deploy Skyscanner-APIrequest --runtime python37 --trigger-top
 ```
 
 
-3. You will need to setup an environment variable with your API key.
-4. You will need to create 2 Tables in BigQuery:
+3. You will need to setup an environment variable in the Cloud Function calling the API with your Skyscanner key.
+```
+gcloud functions deploy Skyscanner-LoopTable --set-env-vars SKYSCANNER_KEY=<YOUR KEY FROM RAPID-API>
+```
+
+4. You will need to create [2 Tables](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/src/setup/createPubsubTopic.py#L13) in BigQuery:
             a) to store the list of destination codes to search on skyscanner,
             b) to save results from the API response
            
-You will find a setup Python file in `gcloud-skyscanner-api/gcloud-skyscanner/src/setup/` with the code needed to create everything. 
-
-
-
-# Set Skyscanner API key as environment variable
-# TODO : ¢ gcloud functions deploy Skyscanner-LoopTable --set-env-vars SKYSCANNER_KEY=<YOUR KEY FROM RAPID-API>
-
+# Scheduler
+![Screenshot](gcloud-skyscanner/assets/images/scheduler.png)
 
 ## Architecture
 
