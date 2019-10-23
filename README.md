@@ -6,7 +6,7 @@ In a nutshell, this is how it works:
 - Get a destination code stored in [Big Query](https://cloud.google.com/bigquery/).
 - Create multiple searches for each destination for different Cabins (economy, business), Point of Sale (UK or US website) and Departure dates.
 - For every combination of these dimensions, you will query the Skyscanner API to get a json file with the list of itineraries containing all the information you would see in the browser version.
-- Once you get the json file, you process it (cleaning, decode values,...) and insert it in BigQuery for further analysis. 
+- Once you get the json file, you process it (cleaning, decode values,...) and insert it into BigQuery for further analysis. 
 
 ![Screenshot](gcloud-skyscanner/assets/images/webvsapi.png)
 
