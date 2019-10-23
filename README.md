@@ -19,7 +19,7 @@ Instead of reading each `code`-`haul` and calling the API serially - we would fo
 
 ![Screenshot](gcloud-skyscanner/assets/images/flow2.png)
 
-## Repository structure
+### Repository structure
 
 `src` folder contains 3 Cloud Functions that you will clone and deploy to Google Cloud. I explain how to do it later. In this folder you will find as well a `setup.py` script that you can follow to set up the environment in GCP similar to the one used in this project (_create and populate Big Query Tables, create Pub/Sub Topic_).
 
@@ -74,7 +74,7 @@ You will need your `KEY` to access the API. **You will set this key as environme
 
 ![Screenshot](gcloud-skyscanner/assets/images/signup.png)
 
-## Initial Setup
+### Initial Setup
 
 1. Create a [Google Cloud Project](https://cloud.google.com/).
 2. You will need 3 Cloud Functions and [3 Pub/Sub Topics](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/src/setup/setup.py#L15).
