@@ -1,13 +1,21 @@
 # gcloud-skyscanner-api
 
-This projects uses Google Cloud Functions and Pub/Sub Topics with Skyscanne API to get fares for different destination. 
+This projects uses Google **Cloud Functions** and **Pub/Sub Topics** with **Skyscanne API** to get fares for different destination. 
 
+In a nutshell, you will get a list of destination codes stored in Big Query. Then you will create multiple searches for each destination for different Cabins (economy, business), Point of Sale (UK, US) and Dates. For every combination of these dimensions, you will query the Skyscanner API to get a json file with the list of itineraries containing all the information you would see in the browser version. Once you get the json file, you process it (cleaning, decode values,...) and insert it in BigQuery for further analysis. 
 
+![Screenshot](gcloud-skyscanner/assets/images/webvsapi.png)
+
+Before you continue, be aware that th Google CLoud Platform components used in this project are **billable**, so you could have some costs. If you are a new user you should get some welcome credits, so don't worry at the beginning. 
+
+## Repository structure
+
+`src` folder contasins 3 Cloud Functions that you will clone and deploy to Google Cloud. I explain how later. In this folder you will find as well a setup script that you can follow to set up the environment in GCP similar to the one used in this project (create and populate Big Query Tables, create Pub/Sub Topic).
 
 
 ```
 ├── assets
-│   ├── airport_codes_200.csv
+│   ├── destinationCodes.csv
 │   └── images
 │       └── bigpicture.png
 ├── README.md
@@ -25,39 +33,34 @@ This projects uses Google Cloud Functions and Pub/Sub Topics with Skyscanne API 
         └── helpers.py
         └── requirements.txt
     └── setup
-        └── main.py
-        └── helpers.py
-        └── requirements.txt
+        └── setup.py
+        └── destinationCodes.csv
  ```
     
-    
+### Architecture
 
-Costs
-This tutorial uses billable components of Cloud Platform, including:
-
-Google Cloud Functions
-Google Cloud Pub/Sub
-Google Cloud Scheduler
+![Screenshot](gcloud-skyscanner/assets/images/flow2.png)
 
 
+### Languages and libraries 
 
-Pub/Sub CLient Libraries: https://cloud.google.com/pubsub/docs/reference/libraries
+This project uses Python language. In addition, you will need [Google Cloud SDK](https://cloud.google.com/appengine/docs/standard/go/download) - once installed you will use `gcloud` command in your Terminal to deploy and manage your projects. Try to get familiarised with it before moving forward.
 
-
-
-If you are playing locally with python and gcloud, you may face the following error message:
+Tip: If you are playing locally with Python and `gcloud`, you may face the following error message:
 ```
 google.auth.exceptions.DefaultCredentialsError: Could not automatically determine credentials. Please set GOOGLE_APPLICATION_CREDENTIALS or explicitly create credentials and re-run the application. For more information, please see https://cloud.google.com/docs/authentication/getting-started
 ```
+When you use Google products within Google environment, you don't hace to worry about credentials becaus eevrething works smoothly - you don't have to setup credential ni your Cloud Functions for example. However, when using gcloud locally you will have to create a service account following [this](https://cloud.google.com/docs/authentication/production) procedure , then **you will download a json file that contains your key**.
 
+In your local python environment, run the following code to set the environment variable:
+```
 import os 
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/users/<username>/<path>/credentials.json"
-  
-You will have to create a service account following https://cloud.google.com/docs/authentication/production , and you will download a json file that contains your key.
+```
 
 ### Request access to Skyscanner API on RapidAPI.com
 
-[RapidAPI] platform is an easy way to start using Skyscanner API. First, you just need to sign up and find the API [here](https://rapidapi.com/skyscanner/api/skyscanner-flight-search). You can play with the UI on your browser to see how the REST API works, but we will use Python instead. 
+[RapidAPI](https://rapidapi.com/) platform is an easy way to start using Skyscanner API. First, you just need to sign up and find the API [here](https://rapidapi.com/skyscanner/api/skyscanner-flight-search). You can play with the UI on your browser to see how the REST API works, but we will use Python instead. 
 
 You will need your `KEY` to access the API. **You will set this key as environment variable in the Cloud Function calling the API** (Explained lateron)
 
@@ -112,10 +115,11 @@ gcloud functions deploy Skyscanner-LoopTable --set-env-vars SKYSCANNER_KEY=<YOUR
             a) to store the list of destination codes to search on skyscanner,
             b) to save results from the API response
            
-# Scheduler
+### Scheduler
+
+On [Google Cloud Platform console](https://console.cloud.google.com), find on the left hand side menu **Cloud Scheduler**. You will schedule to publish a message on a Pub/Sub Topic at a certain frequency. This publication will trigger the full process.
+
 ![Screenshot](gcloud-skyscanner/assets/images/scheduler.png)
 
-## Architecture
 
-![Screenshot](gcloud-skyscanner/assets/images/bigpicture.png)
 
