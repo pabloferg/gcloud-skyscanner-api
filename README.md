@@ -15,7 +15,8 @@ Before you continue, be aware that the Google Cloud components used in this proj
 
 ### Architecture
 
-Instead of reading 
+Instead of reading each `code`-`haul` and calling the API serially - we would follow a **parallel approach** where every iteration across the initial table will trigger a message in Pub/Sub Topic that will trigger a Cloud Function. So we don't have to wait for one search to finish to start a new one.
+
 ![Screenshot](gcloud-skyscanner/assets/images/flow2.png)
 
 ## Repository structure
