@@ -19,7 +19,7 @@ Before you continue, be aware that the Google Cloud components used in this proj
 
 ## Repository structure
 
-`src` folder contasins 3 Cloud Functions that you will clone and deploy to Google Cloud. I explain how to do it later. In this folder you will find as well a `setup.py` script that you can follow to set up the environment in GCP similar to the one used in this project (_create and populate Big Query Tables, create Pub/Sub Topic_).
+`src` folder contains 3 Cloud Functions that you will clone and deploy to Google Cloud. I explain how to do it later. In this folder you will find as well a `setup.py` script that you can follow to set up the environment in GCP similar to the one used in this project (_create and populate Big Query Tables, create Pub/Sub Topic_).
 
 
 ```
