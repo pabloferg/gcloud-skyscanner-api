@@ -3,7 +3,7 @@
 This project uses Google [Cloud Functions](https://cloud.google.com/functions/) and [Pub/Sub Topics](https://cloud.google.com/pubsub/docs/) with [Skyscanne API](https://rapidapi.com/skyscanner/api/skyscanner-flight-search) to get fares for different destinations. With these tools and a bit of imagination, you will track fares for your favourite destinations, compare different airlines prices and get the best deal for your holidays 🌴🌞
 
 In a nutshell, this is how it works: 
-- Get a destination code stored in Big Query.
+- Get a destination code stored in [Big Query](https://cloud.google.com/bigquery/).
 - Create multiple searches for each destination for different Cabins (economy, business), Point of Sale (UK or US website) and Departure dates.
 - For every combination of these dimensions, you will query the Skyscanner API to get a json file with the list of itineraries containing all the information you would see in the browser version.
 - Once you get the json file, you process it (cleaning, decode values,...) and insert it in BigQuery for further analysis. 
