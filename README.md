@@ -31,7 +31,7 @@ Instead of reading each `code`-`haul` and calling the API serially - we would fo
 │       └── bigpicture.png
 ├── README.md
 └── src
-    └── CF-Skyscanner-ProcessRow
+    └── CF-Skyscanner-LoopTable
         └── main.py
         └── helpers.py
         └── requirements.txt
@@ -39,7 +39,7 @@ Instead of reading each `code`-`haul` and calling the API serially - we would fo
         └── main.py
         └── helpers.py
         └── requirements.txt
-    └── CF-Skyscanner-ProcessRow
+    └── CF-Skyscanner-APIcall
         └── main.py
         └── helpers.py
         └── requirements.txt
@@ -86,7 +86,7 @@ You can read [this](https://cloud.google.com/scheduler/docs/tut-pub-sub) tutoria
 There are 3 folders in this repository containing 3 Cloud Functions (CF):
 ```
 └── src
-    └── CF-Skyscanner-ProcessRow
+    └── CF-Skyscanner-LoopTable
         └── main.py
         └── helpers.py
         └── requirements.txt
@@ -94,7 +94,7 @@ There are 3 folders in this repository containing 3 Cloud Functions (CF):
         └── main.py
         └── helpers.py
         └── requirements.txt
-    └── CF-Skyscanner-ProcessRow
+    └── CF-Skyscanner-APIcall
         └── main.py
         └── helpers.py
         └── requirements.txt
