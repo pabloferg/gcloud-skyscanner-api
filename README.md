@@ -4,7 +4,7 @@ This project uses Google [Cloud Functions](https://cloud.google.com/functions/) 
 
 In a nutshell, this is how it works: 
 - Get a destination code stored in [Big Query](https://cloud.google.com/bigquery/).
-- Create multiple searches for each destination for different Cabins (economy, business), Point of Sale (UK or US website) and Departure dates.
+- Create multiple searches for each destination for different Cabins (_economy, business_), Point of Sale (_UK or US website_) and Departure dates.
 - For every combination of these dimensions, you will query the Skyscanner API to get a json file with the list of itineraries containing all the information you would see in the browser version.
 - Once you get the json file, you process it (cleaning, decode values,...) and insert it into BigQuery for further analysis. 
 
@@ -19,7 +19,7 @@ Before you continue, be aware that the Google Cloud components used in this proj
 
 ## Repository structure
 
-`src` folder contasins 3 Cloud Functions that you will clone and deploy to Google Cloud. I explain how later. In this folder you will find as well a setup script that you can follow to set up the environment in GCP similar to the one used in this project (create and populate Big Query Tables, create Pub/Sub Topic).
+`src` folder contasins 3 Cloud Functions that you will clone and deploy to Google Cloud. I explain how to do it later. In this folder you will find as well a `setup.py` script that you can follow to set up the environment in GCP similar to the one used in this project (_create and populate Big Query Tables, create Pub/Sub Topic_).
 
 
 ```
