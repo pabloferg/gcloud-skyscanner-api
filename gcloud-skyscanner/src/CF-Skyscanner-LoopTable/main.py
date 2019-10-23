@@ -8,7 +8,7 @@ def main(event, context):
          context (google.cloud.functions.Context): Metadata for the event.
     """
     # Query Table where destination Codes are stored
-    dataset = "SkyscannerAirportCodes"
+    dataset = "skyscanner"
     table = "main"
     query = """SELECT * FROM """ + dataset + "." + table
     result_rows = query_table(query)
