@@ -1,5 +1,12 @@
 # gcloud-skyscanner-api
 
+- [Architecture](#architecture)
+- [Languages and libraries](#languages-and-libraries)
+- [Skyscanner API](#skyscanner-api)
+- [Initial Setup](#initial-setup)
+- [Scheduler](#scheduler)
+
+
 This project uses Google [Cloud Functions](https://cloud.google.com/functions/) and [Pub/Sub Topics](https://cloud.google.com/pubsub/docs/) with [Skyscanne API](https://rapidapi.com/skyscanner/api/skyscanner-flight-search) to get fares for different destinations. With these tools and a bit of imagination, you will track fares for your favourite destinations, compare different airlines prices and get the best deal for your holidays 🌴🌞
 
 In a nutshell, this is how it works: 
@@ -65,7 +72,7 @@ import os
 os.environ["GOOGLE_APPLICATION_CREDENTIALS"]="/<path>/<key>.json"
 ```
 
-### Request access to Skyscanner API on RapidAPI.com
+### Skyscanner API
 
 [RapidAPI](https://rapidapi.com/) platform is an easy way to start using Skyscanner API. First, you just need to sign up and find the API [here](https://rapidapi.com/skyscanner/api/skyscanner-flight-search). You can play with the UI on your browser to see how the REST API works, but we will use Python instead because it's more fun. 
 
