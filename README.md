@@ -125,7 +125,7 @@ $ gcloud functions deploy Skyscanner-APIrequest --runtime python37 --trigger-top
 
 3. You will need to setup an environment variable in the Cloud Function calling the API with your Skyscanner key.
 ```
-gcloud functions deploy Skyscanner-LoopTable --set-env-vars SKYSCANNER_KEY=<YOUR KEY FROM RAPID-API>
+gcloud functions deploy Skyscanner-APIrequest --set-env-vars SKYSCANNER_KEY=<YOUR KEY FROM RAPID-API>
 ```
 You will [retrieve the key ](https://github.com/pabloferg/gcloud-skyscanner-api/blob/master/gcloud-skyscanner/src/CF-Skyscanner-APIrequest/helpers.py#L6) in the script.
 
